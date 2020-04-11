@@ -23,22 +23,41 @@
 <a class="btn btn-secondary" href="{% url 'polls:index' %}">Back To Polls</a>
 <a class="btn btn-dark" href="{% url 'polls:detail' question.id %}">Vote again?</a>
 <script>
+	var state = {
+		'items':[],
+		'values':[],
+
+	}
+	var objId = "{{question.id}}"
+
+	var dataURL = `/polls/resultsdata/${objId}/`
+	$.ajax({
+		method: 'GET',
+		url: dataURL,
+		success: function(response){
+			console.log('Response', response)
+			for(var i in response){
+
+				var key = Object.keys(response[i])[0]
+				var value = Object.values(response[i])[0]
+
+				state.items.push(key)
+				state.values.push(value)
+			}
+			console.log('State:' ,state)
+			buildChart()
+		}
+	})
+
+function buildChart(){
 	var chartData = {
 		"type" : "bar",
 		"scale-x":{
-			"values":[
-				"dennis",
-				"erik",
-				"jame"
-			]
+			"values":state.items
 		},
 		"series":[
 			{
-				"values":[
-					25,
-					23,
-					27
-				]
+				"values":state.values
 			}
 		]
 	}
@@ -47,6 +66,7 @@
 		id:"myChart",
 		data: chartData,
 	})
+}
 </script>
 
 {% endblock %}
