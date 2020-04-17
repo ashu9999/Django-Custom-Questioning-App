@@ -2,9 +2,9 @@
 My first Django app maybe..
 
 Startup
-`python3 manage.py makemigrations
+`python3 manage.py makemigrations`
 
- python3 manage.py migrate`
+`python3 manage.py migrate`
  
 
 Run server
