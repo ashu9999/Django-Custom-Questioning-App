@@ -10,7 +10,17 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <title>Polls {% block title %}{% endblock %}</title>
+    <title>Django Voting Application{% block title %}{% endblock %}</title>
+    <style>
+      footer{ 
+      position: absolute;
+      font-size: medium;
+      color: black;
+      bottom:0; 
+      height:30px; 
+
+      }
+    </style>
   </head>
   <body>
     <!-- NavBar -->
@@ -22,5 +32,10 @@
         </div>
       </div>
     </div>
+    <footer class="footer">
+      <div class="container">
+        <span class="mx-auto">Developed By Ashutosh Kumar, © 2020.</span>
+      </div>
+    </footer>
   </body>
 </html>
