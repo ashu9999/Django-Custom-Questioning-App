@@ -1,4 +1,4 @@
-# Django-Polls-Viewer
+# Django-Custom-Questioning-Application
 ### A web application to take polls from general public about  
 ### some questions or topics of choice
 
